@@ -4,3 +4,6 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         TaskDefinition: my-cluster-task:2
+        LoadBalancerInfo:
+          ContainerName: "mycontainer1"
+          ContainerPort: 80
