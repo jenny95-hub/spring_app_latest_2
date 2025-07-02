@@ -19,16 +19,16 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker build -t cicdncplimage .
-      - docker tag cicdncplimage:latest jenny16/cicdncplimage:latest
+      - docker build -t kerala .
+      - docker tag kerala:latest jenny16/kerala:latest
 
   post_build:
     commands:
       - echo Pushing Docker image to Docker Hub...
-      - docker push jenny16/cicdncplimage:latest
+      - docker push jenny16/kerala:latest
       - echo Writing imagedefinitions.json...
       - ls -l
-      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"mycontainer1","imageUri":"jenny16/kerala:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yaml...
       
 
