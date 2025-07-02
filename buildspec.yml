@@ -36,4 +36,4 @@ artifacts:
   files:
     - imagedefinitions.json
     - appspec.yml
-    - target/demo-1.0.0.jar
+    
