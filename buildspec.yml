@@ -26,14 +26,14 @@ phases:
     commands:
       - echo Pushing Docker image to Docker Hub...
       - docker push jenny16/cicdncplimage:latest
-      - echo Writing imagedefinitions.json...
+      - echo Writing my-cluster-task:2.json...
       - ls -l
-      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > my-cluster-task:2.json
       - echo Writing appspec.yml...
       
 
 artifacts:
   files:
-    - imagedefinitions.json
+    - my-cluster-task.json
     - appspec.yml
     
