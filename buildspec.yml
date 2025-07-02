@@ -28,7 +28,7 @@ phases:
       - docker push jenny16/cicdncplimage:latest
       - echo Writing imagedefinitions.json...
       - ls -l
-      - printf '[{"name":"springjenny","imageUri":"jenny16/cicdncplimage:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yml...
       
 
