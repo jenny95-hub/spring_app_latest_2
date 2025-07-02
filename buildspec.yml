@@ -12,8 +12,8 @@ phases:
       - echo Logging in to Docker Hub...
      # - DOCKER_USERNAME=$(aws secretsmanager get-secret-value --secret-id docker-hub-credentials1 --query SecretString --output text | jq -r .DOCKER_USERNAME)
       #- DOCKER_PASSWORD=$(aws secretsmanager get-secret-value --secret-id docker-hub-credentials1 --query SecretString --output text | jq -r .DOCKER_PASSWORD)
-      - DOCKER_USERNAME="jenny16"
-      - DOCKER_PASSWORD="jennymanadan"
+      - DOCKER_USERNAME="rajcosivadevops"
+      - DOCKER_PASSWORD="your_actual_docker_password_here"
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 
   build:
@@ -26,14 +26,14 @@ phases:
     commands:
       - echo Pushing Docker image to Docker Hub...
       - docker push jenny16/cicdncplimage:latest
-      - echo Writing my-cluster-task:2.json...
+      - echo Writing imagedefinitions.json...
       - ls -l
-      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > my-cluster-task:2.json
+      - printf '[{"name":"mycontainer1","imageUri":"jenny16/cicdncplimage:latest"}]' > imagedefinitions.json
       - echo Writing appspec.yml...
       
 
 artifacts:
   files:
-    - my-cluster-task.json
+    - imagedefinitions.json
     - appspec.yml
-    
+    - target/demo-1.0.0.jar
