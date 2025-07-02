@@ -4,5 +4,5 @@ Resources:
       Type: AWS::ECS::Service
       Properties:
         LoadBalancerInfo:
-          ContainerName: mycontainer1  # Container name as defined in the task definition
+          ContainerName: "mycontainer1"  # Container name as defined in the task definition
           ContainerPort: 80  # The container port exposed
