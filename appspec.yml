@@ -3,9 +3,7 @@ Resources:
   - myECSService:
       Type: AWS::ECS::Service
       Properties:
-        ClusterName: mycluster  # Your ECS cluster name
-        ServiceName: my-cluster-task-service-6og5pjdp  # Your ECS service name
-        TaskDefinition: imagedefinitions:1  # ECS task definition with the revision number
+        TaskDefinition: imagedefinitions:2  # ECS task definition with the revision number
         LoadBalancerInfo:
           ContainerName: mycontainer1  # Container name as defined in the task definition
           ContainerPort: 80  # The container port exposed
